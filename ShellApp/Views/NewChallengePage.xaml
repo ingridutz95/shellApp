@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:helpers="clr-namespace:ShellApp.Helpers"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="ShellApp.Views.NewChallengePage"
+    BackgroundColor="{StaticResource Background}"
+    ios:Page.UseSafeArea="True"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CategoryIcon" TargetType="Label">
+                <Setter Property="FontFamily" Value="FASolid"/>
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="{StaticResource TextSecondary}"/>
+            </Style>
+            <Style x:Key="CategoryLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="{StaticResource TextSecondary}"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="Auto, .9*, Auto" Padding="0,0,0,12">
+        <Grid
+            Margin="0,0,0,0"
+            Padding="16,16,16,10"
+            BackgroundColor="{StaticResource CardBackground}"
+            ColumnDefinitions="*,*,*"
+            RowDefinitions="Auto, Auto">
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Style="{StaticResource CategoryIcon}"
+                Text="{x:Static helpers:FAIcons.Trophy}"/>
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource CategoryLabel}"
+                Text="Active"/>
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Style="{StaticResource CategoryIcon}"
+                Text="{x:Static helpers:FAIcons.AngleDoubleUp}"/>
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource CategoryLabel}"
+                Text="Upcoming"/>
+            <Label
+                Grid.Row="0"
+                Grid.Column="2"
+                Style="{StaticResource CategoryIcon}"
+                Text="{x:Static helpers:FAIcons.Award}"/>
+            <Label
+                Grid.Row="1"
+                Grid.Column="2"
+                Style="{StaticResource CategoryLabel}"
+                Text="Completed"/>
+        </Grid>
+        <CarouselView
+                Grid.Row="1"
+                Loop="False"
+                PeekAreaInsets="20"
+                IndicatorView="indicatorView">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"
+                                       ItemSpacing="20"
+                                       SnapPointsType="Mandatory"
+                                       SnapPointsAlignment="Center"/>
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item One</x:String>
+                    <x:String>Item Two</x:String>
+                    <x:String>Item Three</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="0, 8, 0, 8">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="CurrentItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1.0"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="PreviousItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value=".95"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="NextItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value=".95"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="DefaultItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1.0"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Frame HasShadow="True"
+                                   CornerRadius="8"
+                                   WidthRequest="300"
+                                   Padding="0">
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#8A2387" Offset="0.1"/>
+                                    <GradientStop Color="#E94057" Offset="0.6"/>
+                                    <GradientStop Color="#F27121" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <!-- 0: Icon,
+                                 1: Active bubble,
+                                 2: Name&Description
+                                 3: Joined&Participants
+                                 4: Progress-->
+                            <Grid RowDefinitions="Auto, Auto, *, *, Auto"
+                                  Padding="0, 16, 0, 0">
+                                <Frame HeightRequest="100"
+                                       WidthRequest="100"
+                                       CornerRadius="50"
+                                       Padding="0"
+                                       HorizontalOptions="Center">
+                                    <Label Text="{x:Static helpers:FAIcons.Award}"
+                                       FontSize="60"
+                                       FontFamily="FASolid"
+                                       TextColor="{StaticResource TextSecondary}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                                </Frame>
+                                
+                                       
+                                <Label
+                                        Grid.Row="1"
+                                        Margin="16, 4, 0, 0"
+                                        FontSize="Small"
+                                        TextColor="{StaticResource TextSecondary}"
+                                        Text="PROGRAM - 4 WEEKS"/>
+                                <Label
+                                        Grid.Row="2"
+                                        Margin="16, 0, 0, 6"
+                                        FontSize="Medium"
+                                        TextColor="{StaticResource TextPrimary}"
+                                        Text="Strength"/>
+                            </Grid>
+                        </Frame>
+                        
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView x:Name="indicatorView"
+                       IndicatorSize="10"
+                       IndicatorColor="LightGray"
+                       SelectedIndicatorColor="DarkGray"
+                       HorizontalOptions="Center"
+                       Grid.Row="2"/>
+    </Grid>
+</ContentPage>
