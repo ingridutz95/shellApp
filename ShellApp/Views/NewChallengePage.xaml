@@ -123,7 +123,8 @@
                                  3: Joined&Participants
                                  4: Progress-->
                             <Grid RowDefinitions="Auto, Auto, *, *, Auto"
-                                  Padding="0, 16, 0, 0">
+                                  RowSpacing="16"
+                                  Padding="0, 24, 0, 0">
                                 <Frame HeightRequest="100"
                                        WidthRequest="100"
                                        CornerRadius="50"
@@ -136,20 +137,89 @@
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"/>
                                 </Frame>
-                                
-                                       
-                                <Label
-                                        Grid.Row="1"
-                                        Margin="16, 4, 0, 0"
-                                        FontSize="Small"
-                                        TextColor="{StaticResource TextSecondary}"
-                                        Text="PROGRAM - 4 WEEKS"/>
-                                <Label
-                                        Grid.Row="2"
-                                        Margin="16, 0, 0, 6"
-                                        FontSize="Medium"
-                                        TextColor="{StaticResource TextPrimary}"
-                                        Text="Strength"/>
+                                <Frame Grid.Row="1"
+                                       BackgroundColor="{StaticResource TextSecondary}"
+                                       HasShadow="False"
+                                       Padding="12, 6"
+                                       HorizontalOptions="Center">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="White" Text="ACTIVE" FontSize="Micro"/>
+                                        <Label TextColor="White" Text=" - " FontSize="Micro"/>
+                                        <Label TextColor="White" Text="14 DAYS LEFT" FontSize="Micro"/>
+                                    </StackLayout>
+                                </Frame>
+                                <StackLayout Grid.Row="2" VerticalOptions="Center">
+                                    <Label 
+                                       Text="The Annual"
+                                       TextColor="White"
+                                       FontSize="24"
+                                       HorizontalOptions="Center"/>
+                                    <Label 
+                                       Text="Build habits for success"
+                                       TextColor="White"
+                                       FontSize="18"
+                                       HorizontalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Grid.Row="3"
+                                             Orientation="Horizontal"
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             Spacing="4">
+                                    <Label Text="{x:Static helpers:FAIcons.Check}"
+                                           FontFamily="FASolid"
+                                           TextColor="White"
+                                           FontSize="Micro"/>
+                                    <Label Text="Joined" TextColor="White" FontSize="Micro"/>
+                                    <Label Text="{x:Static helpers:FAIcons.Users}"
+                                           Margin="12, 0, 0, 0"
+                                           FontFamily="FASolid"
+                                           TextColor="White"
+                                           FontSize="Micro"/>
+                                    <Label Text="1,234,789 participants" TextColor="White" FontSize="Micro"/>
+                                </StackLayout>
+                                <Frame Grid.Row="4"
+                                       Padding="8"
+                                       Margin="8, 0, 8, 8"
+                                       HasShadow="False">
+                                    <Grid ColumnSpacing="8" ColumnDefinitions="Auto, *, Auto">
+                                        <Frame HeightRequest="40"
+                                            WidthRequest="40"
+                                            CornerRadius="20"
+                                            BorderColor="{StaticResource TextSecondary}"
+                                            HasShadow="False"
+                                            Padding="0"
+                                            HorizontalOptions="Center">
+                                            <Label Text="{x:Static helpers:FAIcons.Award}"
+                                                FontSize="24"
+                                                FontFamily="FASolid"
+                                                TextColor="{StaticResource TextSecondary}"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Center"/>
+                                        </Frame>
+                                        <StackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                                            <Label Text="Unearned" FontSize="Small" TextColor="{StaticResource TextPrimary}"/>
+                                            <Label Text="616 of 1k" FontSize="Micro" TextColor="{StaticResource TextSecondary}"/>
+                                            <ProgressBar Progress=".4" ProgressColor="{StaticResource Accent}"/>
+                                        </StackLayout>
+                                        <Frame
+                                            Grid.Column="2"
+                                            VerticalOptions="End"
+                                            HeightRequest="24"
+                                            WidthRequest="24"
+                                            CornerRadius="12"
+                                            BorderColor="{StaticResource TextSecondary}"
+                                            HasShadow="False"
+                                            Padding="0"
+                                            HorizontalOptions="Center">
+                                            <Label Text="{x:Static helpers:FAIcons.Award}"
+                                                FontSize="12"
+                                                FontFamily="FASolid"
+                                                TextColor="{StaticResource TextSecondary}"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Center"/>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
                             </Grid>
                         </Frame>
                         

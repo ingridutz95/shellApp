@@ -20,7 +20,6 @@
 /Users/ingridzanoaga/Desktop/Projects/ShellApp/shellApp/ShellApp/bin/Debug/netstandard2.0/ShellApp.dll
 /Users/ingridzanoaga/Desktop/Projects/ShellApp/shellApp/ShellApp/bin/Debug/netstandard2.0/ref/ShellApp.dll
 /Users/ingridzanoaga/Desktop/Projects/ShellApp/shellApp/ShellApp/bin/Debug/netstandard2.0/ShellApp.pdb
-/Users/ingridzanoaga/Desktop/Projects/ShellApp/shellApp/ShellApp/obj/Debug/netstandard2.0/ShellApp.csprojAssemblyReference.cache
 /Users/ingridzanoaga/Desktop/Projects/ShellApp/shellApp/ShellApp/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/ingridzanoaga/Desktop/Projects/ShellApp/shellApp/ShellApp/obj/Debug/netstandard2.0/AppShell.xaml.g.cs
 /Users/ingridzanoaga/Desktop/Projects/ShellApp/shellApp/ShellApp/obj/Debug/netstandard2.0/Views/FeaturedPage.xaml.g.cs
